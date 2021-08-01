@@ -3,6 +3,7 @@ kind: Deployment
 metadata:
   labels:
     app: nginx
+    app.kubernetes.io/instance: nginx-alpine
     tag: alpine
   name: nginx-alpine
   namespace: demo
@@ -24,6 +25,6 @@ spec:
         tag: alpine
     spec:
       containers:
-      - image: nginx:alpine
-        imagePullPolicy: IfNotPresent
-        name: nginx-alpine
+        - image: 'nginx:alpine'
+          imagePullPolicy: IfNotPresent
+          name: nginx-alpine
